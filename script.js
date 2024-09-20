@@ -1,20 +1,54 @@
+// Array of image filenames in your slideshow folder
+const images = [
+    'image1.jpg',
+    'image2.jpg',
+    'image3.jpg',
+    'image4.jpg',
+    'image5.jpg',
+    'image6.jpg',
+    'image7.jpg',
+    'image8.jpg',
+    'image9.jpg',
+    'image10.jpg',
+    'image11.jpg',
+    'image12.jpg',
+    'image13.jpg',
+    'image14.jpg',
+    'image15.jpg',
+    'image16.jpg',
+    'image17.jpg',
+    'image18.jpg',
+    'image19.jpg',
+    'image20.jpg',
+    'image21.jpg',
+    'image22.jpg',
+    'image23.jpg',
+    'image24.jpg',
+    'image25.jpg',
+    'image26.jpg',
+    'image27.jpg'
+];
+
 let currentIndex = 0;
-const maxIndex = 10;  // Set this to the number of images in your folder
+const maxIndex = images.length;  // Automatically detect the number of images
 const slideshowContainer = document.getElementById('slideshow');
 
 // Dynamically create slides for images
-for (let i = 1; i <= maxIndex; i++) {
+images.forEach((image, index) => {
     const slide = document.createElement('div');
     slide.classList.add('slide');
 
-    // Set the background image for each slide (Assumes images are named image1.jpg, image2.jpg, etc.)
-    slide.style.backgroundImage = `url('./images/slideshow/image${i}.jpg')`;
+    // Check if image exists and log its path
+    const imagePath = `./images/slideshow/${image}`;
+    console.log(`Attempting to load: ${imagePath}`);
+
+    slide.style.backgroundImage = `url(${imagePath})`;
 
     // Make the first slide active
-    if (i === 1) slide.classList.add('active');
+    if (index === 0) slide.classList.add('active');
 
     slideshowContainer.appendChild(slide);
-}
+});
 
 // Function to show the current slide
 function showSlide(index) {
