@@ -1,0 +1,80 @@
+/* General styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: black;
+    color: white;
+    font-family: 'Times New Roman', serif;
+}
+
+/* Header styles */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.website-title a, .contact-link a {
+    font-size: 24px;
+    color: white;
+    text-decoration: none;
+}
+
+.website-title a:hover, .contact-link a:hover {
+    text-decoration: none;
+}
+
+/* Content wrapper */
+.content-wrapper {
+    display: flex;
+    flex-direction: column;  /* Stack elements vertically */
+    align-items: center;     /* Center the content */
+    padding: 20px;
+    height: calc(100vh - 100px);  /* Take up remaining height after header */
+}
+
+/* Description section - Text first */
+.description-section {
+    font-size: 18px;
+    max-width: 600px;
+    text-align: justify;
+    margin-bottom: 20px;
+}
+
+/* Horizontal white line */
+.divider {
+    width: 80%;    /* Horizontal white line */
+    height: 2px;
+    background-color: white;
+    margin: 20px 0;
+}
+
+/* Profile section - Picture at the bottom */
+.profile-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-pic {
+    width: 400px;
+    height: auto;
+}
+
+/* Mobile and smaller devices */
+@media (max-width: 768px) {
+    .description-section {
+        padding: 20px;
+    }
+
+    .profile-pic {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .divider {
+        margin: 20px 0;  /* Space around the line */
+    }
+}
